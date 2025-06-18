@@ -28,6 +28,7 @@ use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\ProdukSayaController;
 use App\Http\Controllers\PersyaratanController;
 use App\Http\Controllers\PemesananKonsumenController;
+use App\Http\Controllers\RekamController;
 
 Route::get('/', [HomeController::class, 'welcome']);
 Route::get('/tentangkami', [HomeController::class, 'tentang']);
@@ -91,11 +92,15 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::prefix('dokter')->group(function () {
+        Route::resource('rekam', RekamController::class);
         Route::get('jadwal', [JadwalSayaController::class, 'index']);
         Route::get('jadwal/{id}/edit', [JadwalSayaController::class, 'edit']);
         Route::get('gantipass', [GantiPassController::class, 'gantipassuser']);
         Route::post('gantipass', [GantiPassController::class, 'resetpass']);
         Route::post('profil', [GantiPassController::class, 'profil']);
+        Route::get('konsultasi', [KonsultasiController::class, 'dokter']);
+        Route::get('konsultasi/chat/{pasien_id}', [KonsultasiController::class, 'chatPasien']);
+        Route::post('chat/{pasien_id}', [KonsultasiController::class, 'kirimChatKePasien']);
         Route::resource('produksaya', ProdukSayaController::class);
     });
 });

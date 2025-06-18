@@ -29,7 +29,7 @@
         </tr>
     </table>
     <hr>
-    <h3 style="text-align: center">LAPORAN DATA JADWAL
+    <h3 style="text-align: center">LAPORAN DATA JADWAL DOKTER
     </h3>
     <br />
     <table width="100%" border="1" cellpadding="5" cellspacing="0">

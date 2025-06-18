@@ -7,7 +7,7 @@
 CHAT DOKTER
 @endsection
 @section('content')
-<a href="/pasien/konsultasi" class="btn btn-secondary btn-sm">Kembali</a>
+<a href="/dokter/konsultasi" class="btn btn-secondary btn-sm">Kembali</a>
 <br /><br />
 <div class="row">
     <div class="col-md-12">
@@ -65,23 +65,6 @@ CHAT DOKTER
                             <!-- /.direct-chat-text -->
                         </div>
                         @endforeach
-                        <!-- /.direct-chat-msg -->
-
-                        <!-- Message to the right -->
-                        {{-- <div class="direct-chat-msg right">
-                            <div class="direct-chat-infos clearfix">
-                                <span class="direct-chat-name float-right">Sarah Bullock</span>
-                                <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                            </div>
-                            <!-- /.direct-chat-infos -->
-                            <img class="direct-chat-img" src="/theme/dist/img/dokter.png" alt=" Message User Image">
-                            <!-- /.direct-chat-img -->
-                            <div class="direct-chat-text">
-                                You better believe it!
-                            </div>
-                            <!-- /.direct-chat-text -->
-                        </div> --}}
-                        <!-- /.direct-chat-msg -->
                     </div>
                     <!--/.direct-chat-messages-->
 
@@ -111,7 +94,7 @@ CHAT DOKTER
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <form action="/pasien/chat/{{$dokter->id}}" method="post">
+                    <form action="/dokter/chat/{{$dokter->id}}" method="post">
                         @csrf
                         <div class="input-group">
                             <input type="text" name="isi" placeholder="Type Message ..." class="form-control" required>

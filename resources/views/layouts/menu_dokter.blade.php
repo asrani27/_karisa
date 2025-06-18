@@ -17,7 +17,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/dokter/rekammedis" class="nav-link {{Request::is('dokter/rekammedis') ? 'active' : ''}}">
+            <a href="/dokter/rekam" class="nav-link {{Request::is('dokter/rekam') ? 'active' : ''}}">
                 <i class="nav-icon fa fa-users"></i>
                 <p>
                     Rekam Medis Pasien
@@ -25,6 +25,14 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a href="/dokter/konsultasi" class="nav-link {{Request::is('dokter/konsultasi') ? 'active' : ''}}">
+                <i class="nav-icon fa fa-clipboard"></i>
+                <p>
+                    Konsultasi Pasien
+                </p>
+            </a>
+        </li>
         {{-- <li class="nav-item">
             <a href="/dokter/gantipass" class="nav-link {{Request::is('dokter/gantipass') ? 'active' : ''}}">
                 <i class="nav-icon fas fa-key"></i>
