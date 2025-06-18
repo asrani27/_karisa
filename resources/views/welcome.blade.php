@@ -65,7 +65,7 @@
         <a href="/" class="logo d-flex align-items-center me-auto">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <img src="/logo/ppni.png" alt="" style="max-height: 60px">
-          <h1 class="sitename">KARISA</h1>
+          <h1 class="sitename">KARISSA</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">

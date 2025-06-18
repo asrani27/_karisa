@@ -13,7 +13,7 @@ CHAT DOKTER
     <div class="col-md-12">
         <div class="card card-primary card-outline direct-chat direct-chat-primary shadow-none">
             <div class="card-header">
-                <h3 class="card-title">Riwayat Chat Dr. {{$dokter->nama}}</h3>
+                <h3 class="card-title">Riwayat Konsultasi dengan Dr. {{$dokter->nama}}</h3>
 
                 {{-- <div class="card-tools">
                     <span title="3 New Messages" class="badge bg-primary">3</span>
@@ -39,7 +39,7 @@ CHAT DOKTER
                             <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                         </div>
                         <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="/theme/dist/img/user1-128x128.jpg" alt="Message User Image">
+                        <img class="direct-chat-img" src="/theme/dist/img/pasien.png" alt="Message User Image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
                             Is this template really for free? That's unbelievable!
@@ -55,7 +55,7 @@ CHAT DOKTER
                             <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                         </div>
                         <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="/theme/dist/img/user3-128x128.jpg" alt="Message User Image">
+                        <img class="direct-chat-img" src="/theme/dist/img/dokter.png" alt=" Message User Image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
                             You better believe it!
@@ -91,9 +91,10 @@ CHAT DOKTER
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <form action="#" method="post">
+                <form action="/pasien/chat/{{$dokter->id}}" method="post">
+                    @csrf
                     <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                        <input type="text" name="isi" placeholder="Type Message ..." class="form-control">
                         <span class="input-group-append">
                             <button type="submit" class="btn btn-primary">Send</button>
                         </span>

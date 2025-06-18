@@ -102,6 +102,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::prefix('pasien')->group(function () {
+        Route::post('chat/{dokter_id}', [KonsultasiController::class, 'kirimChat']);
         Route::get('jadwal', [KonsultasiController::class, 'jadwal']);
         Route::get('konsultasi', [KonsultasiController::class, 'pasien']);
         Route::get('konsultasi/chat/{id}', [KonsultasiController::class, 'chat']);
