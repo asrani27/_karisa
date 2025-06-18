@@ -22,7 +22,7 @@
                         <option value="1">Data Dokter</option>
                         <option value="2">Data Pasien</option>
                         <option value="3">Data Stok</option>
-                        <option value="3">Data Jadwal</option>
+                        <option value="4">Data Jadwal</option>
                     </select>
                     <br />
                     <button type="submit" class="btn btn-flat btn-sm btn-primary"><i class="fa fa-print"></i>
