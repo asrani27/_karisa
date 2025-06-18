@@ -31,25 +31,28 @@ CHAT DOKTER
             <!-- /.card-header -->
             <div class="card-body">
                 <!-- Conversations are loaded here -->
-                <div class="direct-chat-messages">
+                <div class="direct-chat-messages" style="height: 500px">
                     <!-- Message. Default to the left -->
+                    @foreach ($chat as $item)
                     <div class="direct-chat-msg">
                         <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-left">Alexander Pierce</span>
-                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                            <span class="direct-chat-name float-left">{{$item->pasien->nama}}</span>
+                            <span class="direct-chat-timestamp float-right">{{$item->created_at}}</span>
                         </div>
                         <!-- /.direct-chat-infos -->
                         <img class="direct-chat-img" src="/theme/dist/img/pasien.png" alt="Message User Image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
-                            Is this template really for free? That's unbelievable!
+                            {{$item->isi}}
                         </div>
                         <!-- /.direct-chat-text -->
                     </div>
+                    @endforeach
+
                     <!-- /.direct-chat-msg -->
 
                     <!-- Message to the right -->
-                    <div class="direct-chat-msg right">
+                    {{-- <div class="direct-chat-msg right">
                         <div class="direct-chat-infos clearfix">
                             <span class="direct-chat-name float-right">Sarah Bullock</span>
                             <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
@@ -61,7 +64,7 @@ CHAT DOKTER
                             You better believe it!
                         </div>
                         <!-- /.direct-chat-text -->
-                    </div>
+                    </div> --}}
                     <!-- /.direct-chat-msg -->
                 </div>
                 <!--/.direct-chat-messages-->
@@ -94,7 +97,7 @@ CHAT DOKTER
                 <form action="/pasien/chat/{{$dokter->id}}" method="post">
                     @csrf
                     <div class="input-group">
-                        <input type="text" name="isi" placeholder="Type Message ..." class="form-control">
+                        <input type="text" name="isi" placeholder="Type Message ..." class="form-control" required>
                         <span class="input-group-append">
                             <button type="submit" class="btn btn-primary">Send</button>
                         </span>

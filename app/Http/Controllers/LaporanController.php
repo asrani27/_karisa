@@ -38,7 +38,7 @@ class LaporanController extends Controller
             $pdf = Pdf::loadView('superadmin.laporan.pdf_stok', compact('data'))->setPaper('a4', 'landscape');;
             return $pdf->stream();
         }
-        if ($jenis == '3') {
+        if ($jenis == '4') {
             $data = Jadwal::get();
             $pdf = Pdf::loadView('superadmin.laporan.pdf_jadwal', compact('data'))->setPaper('a4', 'landscape');;
             return $pdf->stream();
